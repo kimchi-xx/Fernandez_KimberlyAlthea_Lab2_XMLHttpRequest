@@ -1,0 +1,32 @@
+GUIDE QUESTIONS — XMLHttpRequest
+
+1. What is the difference between readyState and status in XMLHttpRequest?
+
+readyState → Ipinapakita kung gaano kalawak natapos na ang request.
+   0 = Hindi pa nagsimula
+   1 = Nakakonekta na
+   2 = Naipadala na ang request
+   3 = Tinatanggap pa ang sagot
+   4 = Tapos na — handa na ang sagot
+
+status → Ipinapakita ang kodigo ng resulta mula sa server.
+   200 = OK / Matagumpay
+   404 = Hindi Natagpuan
+   500 = May Mali sa Server
+
+
+2. How can you make the request asynchronous?
+
+Sa linyang xhr.open(), ilagay ang "true" sa huling bahagi:
+   xhr.open("GET", "link-dito", true);
+
+Kapag "true" = hindi hihinto ang page habang naghihintay
+Kapag "false" = hihinto ang page hanggang makatanggap ng sagot
+
+
+3. Why is asynchronous communication recommended for web applications?
+
+- Hindi nag-freeze o nagla-lag ang page habang naghihintay
+- Pwede pa ring mag-click, mag-type, o mag-scroll ang user
+- Mas mabilis at mas magandang karanasan lalo na sa mabagal na internet
+- Pwede magpatakbo ng maraming gawain nang sabay-sabay
